@@ -1,56 +1,34 @@
 import React ,{useState}from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View, FlatList} from 'react-native';
-
-import TodoInput from "./components/TodoInput";
-import TodoItem from './components/TodoItem';
+import Flex from "./projects/Lessons/components/flex";
+import Page from "./projects/Lessons/components/customComponentExample/page";
+import TodoInput from "./projects/Lessons/components/TodoInput";
+import TodoItem from './projects/Lessons/components/TodoItem';
 import { TouchableOpacity } from 'react-native-web';
 
+import Card from "./projects/Lessons/components/customComponentExample/card";
+import MusicList from './projects/MusicApp/components/MusicList';
 const App = () => {
 
-  const [todoItems, setTodoItems] = useState([{text:"Buy groceries", completed:true}, {text: "Make blogpost", completed: false}]);
-  
-  function addTodoItem(_text){
-    setTodoItems([...todoItems,{text:_text, completed:false}]);
-  }
-  function deleteTodoItem(_index){
-    let tempArr = [...todoItems];
-    tempArr.splice(_index, 1);
-    setTodoItems(tempArr);
-  }
-  function completeTodoItem(_index){
-    let tempArr = [...todoItems];
-    tempArr[_index].completed = true;
-    setTodoItems(tempArr);
-  }
-  
   return (
     <View>
-       <StatusBar barStyle={"light-content"} backgroundColor={"#212121"}/> 
-        <SafeAreaView style={{padding:16}}>
-          <Text style={{fontSize:36, color:"#ffffff",  fontWeight:'bold'}}>Todo</Text>
-        
-        <FlatList
-        data={todoItems}
-        keyExtractor={(items, index) => index.toString()}
-        renderItem={({item, index}) => {
-          return(
-            <TodoItem
-              item={item}
-              deleteFunction={() => deleteTodoItem(index)}
-              completeFunction={()=> completeTodoItem(index)}
-            />
-          )
-        }}
-        />
-        <TodoInput onPress={addTodoItem}/>
-     </SafeAreaView>
-      
+      <MusicList/>
     </View>
     
   );
 }
+// flex: bulunduğun yer içinde kaplayabildiğin alan kadar yer kapla
 export default App;
+
+
 const styles = StyleSheet.create({
+  container:{
+      flex:1,
+     // margin: 10, // dışarıdan boşluk
+      //padding: 10, // içeriden boşluk
+      //borderRadius : 5,
+      alignItems: "center",
+    },
   
 });
