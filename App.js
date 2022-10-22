@@ -9,12 +9,18 @@ import { TouchableOpacity } from 'react-native-web';
 
 import Card from "./projects/Lessons/components/customComponentExample/card";
 import MusicList from './projects/MusicApp/components/MusicList';
+import TodoApp from './projects/ToDoApp/components/TodoApp';
+
+import store from "./projects/ToDoApp/reduxToolkitExample/store"
+import {Provider} from 'react-redux';
 const App = () => {
 
   return (
-    <View>
-      <MusicList/>
-    </View>
+    <Provider store = {store}>
+      {/* <MusicList/> */}
+      <TodoApp/>
+    </Provider>
+    
     
   );
 }
