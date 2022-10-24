@@ -23,7 +23,6 @@ export default function TodoCounter(){
 
 const styles=StyleSheet.create({
     container:{
-        flex:1,
         backgroundColor:"red",
         flexDirection:"row"
     },

@@ -15,7 +15,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const counterSlice = createSlice({
     name:'todoCounter',
     initialState:{
-        value : 7
+        value : 0
     },
     reducers:{
         increment : state=> {
@@ -27,7 +27,6 @@ export const counterSlice = createSlice({
         incrementByAmount: (state, action) =>{
             state.value += action.payload
         }
-
     }
 })
 export const selectCount = (state) => state.todoCounter.value   ;
