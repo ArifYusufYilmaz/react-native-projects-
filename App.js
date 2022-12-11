@@ -13,15 +13,18 @@ import TodoApp from './projects/ToDoApp/components/TodoApp';
 
 import store from "./projects/ToDoApp/reduxToolkitExample/store"
 import {Provider} from 'react-redux';
+
+import { ApiProvider } from '@reduxjs/toolkit/dist/query/react';
+import { ApiSlice } from './projects/api/apiSlice';
 const App = () => {
 
   return (
-    <Provider store = {store}>
-      {/* <MusicList/> */}
+    // <ApiProvider api = {ApiSlice}>
+     <Provider store = {store}> 
+       {/* <MusicList/>  */}
       <TodoApp/>
-    </Provider>
-    
-    
+     </Provider>
+  //  </ApiProvider>
   );
 }
 // flex: bulunduğun yer içinde kaplayabildiğin alan kadar yer kapla

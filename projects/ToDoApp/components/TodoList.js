@@ -8,6 +8,7 @@ import TodoUnit from "./TodoUnit";
 export default function TodoList(){
     const todoItems = useSelector(selectTodo);
     const renderTodos = ({item})=> <TodoUnit data={item}></TodoUnit>;
+    
     return(
         <View style={styles.container}>
              <FlatList keyExtractor={(item,index) => index.toString()}

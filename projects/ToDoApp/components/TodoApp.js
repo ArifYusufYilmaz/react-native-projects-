@@ -3,14 +3,25 @@ import { View,Text, StyleSheet } from "react-native";
 import TodoCounter from "./TodoCounter";
 import TodoList from "./TodoList";
 import TodoSave from "./TodoSave";
+import ApiUsageExample from "../../api/ApiUsageExample";
+import ApiRTKExample from "../../api/apiRTKExample";
+import NavigationApp from "../../navigation/NavigationApp";
+
+
 export default function TodoApp(){
     return(
        
         <View style={styles.container}>
-            <TodoCounter style={styles.todoCounterStyle}></TodoCounter>
+            <Text>hello</Text>
+            {/* <TodoCounter style={styles.todoCounterStyle}></TodoCounter> 
             <TodoList style={styles.todoListStyle} ></TodoList>
-            <TodoSave style={styles.todoSaveStyle} ></TodoSave>
+             <TodoSave style={styles.todoSaveStyle} ></TodoSave> */}
+            {/* <ApiUsageExample /> */}
+             {/* <ApiRTKExample/> */}
+             <NavigationApp></NavigationApp>
+            <Text>hello</Text>
         </View>
+        
        
     );
 }
@@ -22,7 +33,6 @@ const styles = StyleSheet.create({
     todoCounterStyle:{
     },
     todoListStyle:{
-        backgroundColor:"yellow",
         alignItems:"bottom"
     },
     todoSaveStyle:{
